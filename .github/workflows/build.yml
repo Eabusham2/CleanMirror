@@ -1,13 +1,16 @@
 name: Build & Release
 
 # - Every push / pull request: build the mod and attach the jar to the run as an artifact.
-# - Pushing a tag like v1.2.3: build with version 1.2.3 and publish a GitHub Release with the jar.
+# - Pushing a tag like v1.2.3, or publishing a release for tag v1.2.3 on GitHub:
+#   build with version 1.2.3 and attach the jar to that GitHub Release.
 # - Can also be started by hand from the Actions tab.
 
 on:
   push:
     branches: [main]
     tags: ['v*']
+  release:
+    types: [published]
   pull_request:
   workflow_dispatch:
 
@@ -57,7 +60,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           name: CleanMirror ${{ steps.version.outputs.value }}
+          tag_name: ${{ github.ref_name }}
           files: build/libs/*.jar
+          overwrite_files: true
           generate_release_notes: true
           body: |
             **CleanMirror ${{ steps.version.outputs.value }}** for Minecraft **1.21.11** (Fabric).
