@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.eyad.cleanmirror.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "CameraAccessor",
+    "CameraMixin",
+    "EntityRendererMixin",
+    "GameRendererAccessor",
+    "GameRendererMixin",
+    "HudRootLayerMixin",
+    "InGameHudInvoker",
+    "MinecraftClientAccessor",
+    "MinecraftClientMixin",
+    "PanoramaMixin",
+    "PlayerEntityRendererMixin",
+    "PreparerForwardMixin",
+    "ToastEntryMixin",
+    "WorldRendererAccessor",
+    "WorldRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

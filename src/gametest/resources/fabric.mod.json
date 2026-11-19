@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "cleanmirror-test",
+  "version": "1.0.0",
+  "name": "CleanMirror test harness",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.eyad.cleanmirror.test.FakeMods"],
+    "fabric-client-gametest": ["com.eyad.cleanmirror.test.CleanMirrorClientGameTest"]
+  },
+  "mixins": [{ "config": "cleanmirror-test.mixins.json", "environment": "client" }],
+  "depends": { "cleanmirror": "*" }
+}
